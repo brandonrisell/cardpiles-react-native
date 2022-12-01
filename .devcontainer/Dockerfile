@@ -1,9 +1,9 @@
 # [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 18, 16, 14, 18-bullseye, 16-bullseye, 14-bullseye, 18-buster, 16-buster, 14-buster
 ARG VARIANT=16-bullseye
-FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 
 # Install tslint, typescript. eslint is installed by javascript image
-ARG NODE_MODULES="eslint typescript expo-cli @expo/ngrok@^4.1.0"
+ARG NODE_MODULES="expo-cli @expo/ngrok@^4.1.0"
 
 # Install latest NPM
 RUN su node -c "umask 0002 && npm install -g npm@latest" \
