@@ -6,12 +6,12 @@ services:
       context: ..
       dockerfile: ./.devcontainer/Dockerfile
       args:
-        VARIANT: "16"
+        VARIANT: "16" # "16-bullseye" on macOS Apple Silicon machines
 
     volumes:
       - ..:/workspace:cached
 
-    # user: vscode
+    user: node
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
